@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+
+:root{
+    --HoverTransitions: all ease .5s;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+    background: rgb(255,178,77);
+    background: radial-gradient(circle, rgba(255,178,77,1) 50%, rgba(242,173,32,1) 100%); 
+}
+
+.mainTitle{
+    font-size: 42px;    
+    font-family: 'Bungee Spice', sans-serif;
+    text-shadow: 2px 2px 2px rgba(42, 40, 40, .7);
+}
+
+.pokemonContainer{
+    /*position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* */
+    width:fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1em;
+    padding: 2em 1em;
+}
+/*
+.pokemonContainer input{
+    display: none;
+}
+*/
+.pokemonContainer .pokemonImage{
+    /* esta línea indica que debe cargar una imagen que se encuentra en nuestro directorio, en caso de no encontrarla cargará por defecto el cursos pointer*/
+    cursor: url(../assets/cursor.png), pointer; 
+    filter: saturate(.7);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0, .5));
+    transition: var(--HoverTransitions);
+}
+
+.pokemonContainer .pokemonImage:hover{
+    filter: saturate(1.5);
+    transform: scale(1.1);
+}
