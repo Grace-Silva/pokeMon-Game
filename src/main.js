@@ -8,6 +8,9 @@ listaPokemons[0].onclick =()=>{
 window.addEventListener("load", ampliarPokemon);
 
 function ampliarPokemon() {
+
+  document.querySelectorAll("[type='radio']").forEach((x) => x.checked=false);
+
   let listaPokemons = document.querySelectorAll("img");
 
   listaPokemons[0].onclick = () => {
@@ -62,6 +65,9 @@ function seleccionarPokemon() {
     alert("psyduck, no lo estreses y se bueno con él");
   } else if (inputGeodude.checked) {
     alert("geodude, excelente compañero, entrénalo bien");
+  }
+  else{
+    alert("Por favor selecciona un PokéMon");
   }
 
   window.location.reload();
