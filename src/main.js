@@ -44,6 +44,8 @@ function seleccionarPokemon() {
     else if (inputGeodude.checked) {
       alert("geodude, excelente compañero, entrénalo bien");
   }
+
+  window.location.reload();
 }
 
 
