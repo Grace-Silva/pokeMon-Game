@@ -59,3 +59,17 @@ main{
 .activeImage{
     transform: scale(1.2 , 1.2);
 }
+
+.btnSelPok{
+    padding: .5em 1em;
+    border: solid transparent 2px;
+    border-radius: 4px;
+    font-family: 'Bungee Spice', sans-serif;
+    font-size: 20px;
+    background: #fafafa;
+    cursor: pointer;
+    transition: var(--HoverTransitions);
+}
+.btnSelPok:hover{
+    transform: scale(.9,.9);
+}
