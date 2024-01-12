@@ -48,12 +48,41 @@ function seleccionarPokemon() {
   else{
     alert("Por favor selecciona un PokéMon");
   }
-
+  seleccionarPokemonPC();
   window.location.reload();
 }
 
 let btnSeleccionarPokemon = document.getElementById("btnSeleccionarPokemon");
 btnSeleccionarPokemon.addEventListener("click", seleccionarPokemon);
+
+function seleccionarPokemonPC(){
+
+  let pokemonPC = aleatorio(1,3);
+
+  switch (pokemonPC) {
+    case 1:
+      alert("PC HA ELEGIDO A BULBASUR");
+      break;
+
+    case 2:
+      alert("PC HA ELEGIDO A CHARMANDER");
+      break;
+
+    case 3:
+      alert("PC HA ELEGIDO A SQUIRTLE");
+      break;
+
+    default:
+      alert("LA PC NO QUIERE JUGAR");
+      break;
+  }
+
+}
+
+/* generar un numero aleatorio entre 1 y 3 */
+function aleatorio(min, max){
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
 /* ampliar personaje al hacer click */
 
