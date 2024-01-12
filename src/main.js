@@ -6,13 +6,14 @@ listaPokemons[0].onclick =()=>{
 }
 */
 window.addEventListener("load", ampliarPokemon);
-
+/* permite que el la imagen del pokemon a seleccionar se amplíe a hacer clic sobre ella.  */
 function ampliarPokemon() {
 
   document.querySelectorAll("[type='radio']").forEach((x) => x.checked=false);
 
-  let listaPokemons = document.querySelectorAll("img");
+  document.querySelectorAll("[img='img']");
 
+/*
   listaPokemons[0].onclick = () => {
     listaPokemons[0].classList.add("activeImage");
     listaPokemons[1].classList.remove("activeImage");
@@ -29,29 +30,8 @@ function ampliarPokemon() {
     listaPokemons[2].classList.add("activeImage");
     listaPokemons[0].classList.remove("activeImage");
     listaPokemons[1].classList.remove("activeImage");
-  };
-};
-/*
-let listaPokemons = document.querySelectorAll("img");
-
-listaPokemons[0].onclick =()=>{
-  listaPokemons[0].classList.add("activeImage");
-  listaPokemons[1].classList.remove("activeImage");
-  listaPokemons[2].classList.remove("activeImage");
+  };*/
 }
-
-listaPokemons[1].onclick =()=>{
-  listaPokemons[1].classList.add("activeImage");
-  listaPokemons[0].classList.remove("activeImage");
-  listaPokemons[2].classList.remove("activeImage");
-}
-
-listaPokemons[2].onclick =()=>{
-  listaPokemons[2].classList.add("activeImage");
-  listaPokemons[0].classList.remove("activeImage");
-  listaPokemons[1].classList.remove("activeImage");
-}
-*/
 
 /* seleccion del pokemon inicial */
 function seleccionarPokemon() {
@@ -77,3 +57,20 @@ let btnSeleccionarPokemon = document.getElementById("btnSeleccionarPokemon");
 btnSeleccionarPokemon.addEventListener("click", seleccionarPokemon);
 
 /* ampliar personaje al hacer click */
+
+
+
+/* funcion experimental
+
+document.querySelectorAll("img")
+NodeList(3) [ img.pokemonImage, img.pokemonImage, img.pokemonImage
+ ]
+
+for(let i=0; i<3; i++){
+  document.querySelectorAll("img")[i].onclick =()=>{
+    document.querySelectorAll("img")[i].style.border="solid red";
+  }
+}
+function ()
+
+*/

@@ -43,10 +43,10 @@ main{
     gap: 1em;
     padding: 2em 1em;
 }
-/*
+
 .pokemonContainer input{
     display: none;
-}*/
+}
 
 .pokemonContainer .pokemonImage{
     /* esta línea indica que debe cargar una imagen que se encuentra en nuestro directorio, en caso de no encontrarla cargará por defecto el cursos pointer
