@@ -11,9 +11,8 @@ function ampliarPokemon() {
 
   document.querySelectorAll("[type='radio']").forEach((x) => x.checked=false);
 
-  document.querySelectorAll("[img='img']");
+  let listaPokemons = document.querySelectorAll("img");
 
-/*
   listaPokemons[0].onclick = () => {
     listaPokemons[0].classList.add("activeImage");
     listaPokemons[1].classList.remove("activeImage");
@@ -30,7 +29,7 @@ function ampliarPokemon() {
     listaPokemons[2].classList.add("activeImage");
     listaPokemons[0].classList.remove("activeImage");
     listaPokemons[1].classList.remove("activeImage");
-  };*/
+  };
 }
 
 /* seleccion del pokemon inicial */
