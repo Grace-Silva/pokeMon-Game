@@ -30,12 +30,7 @@ main{
 }
 
 .pokemonContainer{
-    /*position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* */
-    width:fit-content;
+    width: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -49,8 +44,6 @@ main{
 }
 
 .pokemonContainer .pokemonImage{
-    /* esta línea indica que debe cargar una imagen que se encuentra en nuestro directorio, en caso de no encontrarla cargará por defecto el cursos pointer
-    cursor: url(../assets/cursor.png), pointer; */
     cursor: pointer;
     transition: var(--HoverTransitions);
 }
@@ -58,14 +51,14 @@ main{
     filter: drop-shadow(4px 4px 16px rgba(217, 202, 36, 0.7));
 }
 
-.activeImage{    
+.pokemonContainer input:checked ~ img{
     filter: drop-shadow(0 2px 4px rgba(0,0,0, .5));
     transform: scale(1.2 , 1.2);
 }
 
 .btnSelPok{
     padding: .5em 1em;
-    border: solid transparent 2px;
+    border: none;
     border-radius: 4px;
     font-family: 'Bungee Spice', sans-serif;
     font-size: 20px;
