@@ -23,24 +23,33 @@ function deseleccionarTodo(){
 /* seleccion del pokemon inicial de parte del usuario */
 function seleccionarPokemon() {
 
+  /* casillas de selección */
   let inputPikachu = document.getElementById("pikachu");
   let inputPsyduck = document.getElementById("psyduck");
   let inputGeodude = document.getElementById("geodude");
 
   if (inputPikachu.checked) {
-    alert("ELEGISTE A PIKACHU, LE GUSTA SU ESPACIO ⚡ .");
+    alert("ELEGISTE A PIKACHU, LE GUSTA SU ESPACIO ⚡ .");  
+    //PC "elige" un PokéMon
+    seleccionarPokemonPC();
+    mostrarCombate();
   } 
     else if (inputPsyduck.checked) {
       alert("ELEGISTE A PSYDUCK. NO LO ESTRESES, SÉ BUENO CON ÉL.");
-  } 
+      //PC "elige" un PokéMon
+      seleccionarPokemonPC();
+      mostrarCombate();
+    } 
     else if (inputGeodude.checked) {
       alert("ELEGISTE A GEODUDE, SU AMISTAD SERÁ COMO LA ROCA.");
-  }
+      //PC "elige" un PokéMon
+      seleccionarPokemonPC();
+      mostrarCombate();
+      }
   else{
     alert("Por favor selecciona un PokéMon.");
   }
-  //PC "elige" un PokéMon
-  seleccionarPokemonPC();
+
   // La página se recarga para seguir jugando
   window.location.reload();
 }
@@ -76,4 +85,9 @@ function seleccionarPokemonPC(){
 /* Se genera un número aleatorio para que la pc seleccione un PokéMon */
 function aleatorio(min, max){
   return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function mostrarCombate(){
+  let battleFieldContainer = document.querySelector(".battleFieldContainer");
+  battleFieldContainer.style.display = "flex";
 }
