@@ -30,28 +30,23 @@ function seleccionarPokemon() {
 
   // pikachu
   if (inputPikachu.checked) {
-    alert("haz elegido a pikachu");
     pokUser = 1;
   } 
     // psyduck
     else if (inputPsyduck.checked) {
-      alert("haz elegido a psyduck");
       pokUser = 2;
     } 
     // geodude
     else if (inputGeodude.checked) {
-      alert("haz elegido a geodude");
       pokUser = 3;
       }
   // el usuario no elige nada, el PC tampoco    
   else{
     alert("Por favor selecciona un PokéMon.");
-    window.location.reload();
   }
 
   return pokUser;
-  /* La página se recarga para seguir jugando
-  window.location.reload();*/
+
 }
 
 // botón para jugar:
@@ -64,18 +59,16 @@ function seleccionarPokemonPC(){
   let pokemonPC = aleatorio(1,3);
 
   switch (pokemonPC) {
+    // bulbasur
     case 1:
-      alert("pc ha elegido a bulbasur");
       pokPC = 1;
       break;
-
+    // charmander
     case 2:
-      alert("pc ha elegido a charmander");
       pokPC = 2;
       break;
-
+    // squirtle
     case 3:
-      alert("pc ha elegido a squirtle");
       pokPC = 3;
       break;
 
@@ -99,65 +92,88 @@ function mostrarCombate(){
   // window background
   let battleFieldContainer = document.querySelector(".battleFieldContainer");
     battleFieldContainer.style.display = "flex";
+  // battle result
+  let battleResult = document.querySelector(".battleResult");  
 
   // close button
   let closeFieldButton = document.getElementById("closeFieldButton");
     closeFieldButton.addEventListener("click", cerrarCombate);
     
+    // contenedores de imagenes de los pokemon
     let userPokeMon = document.getElementById("userPokeMon");
     let pcPokeMon = document.getElementById("pcPokeMon");
 
     let pok1 = seleccionarPokemon();
     let pok2 = seleccionarPokemonPC();
-      // función seleccionar pokemon (user)
 
-    switch (pok1) {
-      //pikachu
-      case 1:
-        userPokeMon.setAttribute("src", "./assets/pikachu.png");
-        if(pok2==3){
-          // alert("pikachu le gana a squirtle");
+      // asignación de imagen para el pokemon de la cpu
+      switch (pok2) {
+        // bulbasur
+        case 1:
+          pcPokeMon.setAttribute("src", "../assets/bulbasur.png");    
+          break;
+        // charmander
+        case 2:
+          pcPokeMon.setAttribute("src", "../assets/charmander.png");
+          break;
+        // squirtle
+        case 3:
+          pcPokeMon.setAttribute("src", "../assets/squirtle.png");
+          break;  
 
-        }
-          else if(pok2==2){
-            alert("pikachu empata con charmander");
-          }
-        else{
-          alert("bulbasur PC gana");
-        }  
-        break;
-      // psyduck
-      case 2:
-        userPokeMon.setAttribute("src", "./assets/psyduck.png");
-        if(pok2==1){
-          alert("psyduck le gana bulbasur");
-        }
-          else if(pok2==3){
-            alert("psyduck empata con squirtle");
-          }
-         else{
-          alert("charmander PC gana");
-         } 
-         break;
-      // geodude
-      case 3:
-        userPokeMon.setAttribute("src", "./assets/geodude.png");
-        if(pok2==2){
-          alert("geodude le gana a charmander");
-        }
-          else if(pok2==1){
-            alert("geodude empata con bulbasur");
-          }
-         else{
-          alert("squirtle PC gana");
-         } 
-        break;   
+        default:
+          alert("Ha ocurrido un error, intenta mas tarde.");
+          window.location.reload();
+          break;
+      }  
 
-      default:
-        alert("ha ocurrido un error, intenta mas tarde");
-        window.location.reload();
-        break;
-    }      
+      // asignación de imagen para el pokemon del usuario
+      switch (pok1) {
+        //pikachu
+        case 1:
+          userPokeMon.setAttribute("src", "../assets/pikachu.png");
+          if(pok2==3){
+            battleResult.textContent = "TÚ GANAS";
+          }
+            else if(pok2==2){
+              battleResult.textContent = "EMPATE";
+            }
+          else{
+            battleResult.textContent = "CPU GANA";
+          }  
+          break;
+        // psyduck
+        case 2:
+          userPokeMon.setAttribute("src", "../assets/psyduck.png");
+          if(pok2==1){
+            battleResult.textContent = "TÚ GANAS";
+          }
+            else if(pok2==3){
+              battleResult.textContent = "EMPATE";
+            }
+          else{
+            battleResult.textContent = "CPU GANA";
+          } 
+          break;
+        // geodude
+        case 3:
+          userPokeMon.setAttribute("src", "../assets/geodude.png");
+          if(pok2==2){
+            battleResult.textContent = "TÚ GANAS";
+          }
+            else if(pok2==1){
+              battleResult.textContent = "EMPATE";
+            }
+          else{
+            battleResult.textContent = "CPU GANA";
+          } 
+          break;   
+
+        default:
+          alert("Ha ocurrido un error, intenta mas tarde.");
+          window.location.reload();
+          break;
+      }      
 
     // cerrar combate PokéMon  y recargar la página para seguir jugando:
     function cerrarCombate(){
