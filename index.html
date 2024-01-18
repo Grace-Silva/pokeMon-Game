@@ -6,11 +6,12 @@
     <title>PokeMon Game</title>
     <link rel="stylesheet" href="./styles/style.css">
     <script src="./src/main.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
 
-
+    <!-- choose a PokeMon ...-->
     <main>
 
         <h1 class="mainTitle">
@@ -37,7 +38,37 @@
         </div>
 
         <button id="btnSeleccionarPokemon" class="btnSelPok">OK!</button>
+
     </main>
-    
+  
+    <!-- modal window background -->
+    <section class="battleFieldContainer">
+
+        <!-- modal window -->
+        <div class="battleField">
+
+            <div class="battleFieldPokeMon">
+                <img src="./assets/pikachu.png" alt="" class="userPokeMon">
+            </div>
+
+            <span class="vsTitle">Vs</span>
+
+            <div class="battleFieldPokeMon">
+                 <img src="./assets/charmander.png" alt="" class="pcPokeMon">
+            </div>
+
+            <!-- botón para cerrar la ventana de combate -->
+            <button class="closeFieldContainer" id="closeFieldButton">
+                <i class="fa-solid fa-xmark"></i> 
+            </button>
+
+        </div>
+
+
+
+    </section>
+
+
+
 </body>
 </html>
