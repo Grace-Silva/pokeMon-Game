@@ -30,24 +30,15 @@ function seleccionarPokemon() {
 
   // pikachu
   if (inputPikachu.checked) {
-    alert("ELEGISTE A PIKACHU, LE GUSTA SU ESPACIO ⚡ .");  
-    //PC "elige" un PokéMon
-    seleccionarPokemonPC();
-    mostrarCombate();
+    pokUser = 1;
   } 
     // psyduck
     else if (inputPsyduck.checked) {
-      alert("ELEGISTE A PSYDUCK. NO LO ESTRESES, SÉ BUENO CON ÉL.");
-      //PC "elige" un PokéMon
-      seleccionarPokemonPC();
-      mostrarCombate();
+      pokUser = 2;
     } 
     // geodude
     else if (inputGeodude.checked) {
-      alert("ELEGISTE A GEODUDE, SU AMISTAD SERÁ COMO LA ROCA.");
-      //PC "elige" un PokéMon
-      seleccionarPokemonPC();
-      mostrarCombate();
+      pokUser = 3;
       }
   // el usuario no elige nada, el PC tampoco    
   else{
@@ -55,13 +46,14 @@ function seleccionarPokemon() {
     window.location.reload();
   }
 
+  return pokUser;
   /* La página se recarga para seguir jugando
   window.location.reload();*/
 }
 
 // botón para jugar:
 let btnSeleccionarPokemon = document.getElementById("btnSeleccionarPokemon");
-  btnSeleccionarPokemon.addEventListener("click", seleccionarPokemon);
+  btnSeleccionarPokemon.addEventListener("click", mostrarCombate);
 
 //PC "elige" un PokéMon
 function seleccionarPokemonPC(){
@@ -70,21 +62,23 @@ function seleccionarPokemonPC(){
 
   switch (pokemonPC) {
     case 1:
-      alert("PC HA ELEGIDO A BULBASUR.");
+      pokPC = 1;
       break;
 
     case 2:
-      alert("PC HA ELEGIDO A CHARMANDER.");
+      pokPC = 2;
       break;
 
     case 3:
-      alert("PC HA ELEGIDO A SQUIRTLE.");
+      pokPC = 3;
       break;
 
     default:
       alert("LA PC NO QUIERE JUGAR, VUELVE MÁS TARDE.");
       break;
   }
+
+  return pokPC;
 
 }
 
@@ -107,8 +101,25 @@ function mostrarCombate(){
     let userPokeMon = document.getElementById("userPokeMon");
     let pcPokeMon = document.getElementById("pcPokeMon");
 
+    let pok1 = seleccionarPokemon();
+    let pok2 = seleccionarPokemonPC();
       // función seleccionar pokemon (user)
-    
+
+    if(pok1==1 && pok2==3 || pok2==2){
+      alert("pikachu le gana a squirtle y a charmander");  
+    }
+      else if(pok1==2 && pokPC==1 || pok2==3){
+        alert("psyduck le gana a bulbasur y squirtle");
+      }
+      else if(pok1==3 && pok2==1 || pok2==2){
+        alert("geodude le gana a bulbasur y charmander");
+      }
+    else{
+      alert("gana pc");
+    }  
+
+      
+
     // cerrar combate PokéMon  y recargar la página para seguir jugando:
     function cerrarCombate(){
       battleFieldContainer.style.display = "none";
