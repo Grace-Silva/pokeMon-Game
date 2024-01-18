@@ -96,7 +96,7 @@ function aleatorio(min, max){
 
 function mostrarCombate(){
 
-  /* window background
+  // window background
   let battleFieldContainer = document.querySelector(".battleFieldContainer");
     battleFieldContainer.style.display = "flex";
 
@@ -106,7 +106,7 @@ function mostrarCombate(){
     
     let userPokeMon = document.getElementById("userPokeMon");
     let pcPokeMon = document.getElementById("pcPokeMon");
-*/
+
     let pok1 = seleccionarPokemon();
     let pok2 = seleccionarPokemonPC();
       // función seleccionar pokemon (user)
@@ -114,8 +114,10 @@ function mostrarCombate(){
     switch (pok1) {
       //pikachu
       case 1:
+        userPokeMon.setAttribute("src", "./assets/pikachu.png");
         if(pok2==3){
-          alert("pikachu le gana a squirtle");
+          // alert("pikachu le gana a squirtle");
+
         }
           else if(pok2==2){
             alert("pikachu empata con charmander");
@@ -126,6 +128,7 @@ function mostrarCombate(){
         break;
       // psyduck
       case 2:
+        userPokeMon.setAttribute("src", "./assets/psyduck.png");
         if(pok2==1){
           alert("psyduck le gana bulbasur");
         }
@@ -138,6 +141,7 @@ function mostrarCombate(){
          break;
       // geodude
       case 3:
+        userPokeMon.setAttribute("src", "./assets/geodude.png");
         if(pok2==2){
           alert("geodude le gana a charmander");
         }
@@ -153,14 +157,11 @@ function mostrarCombate(){
         alert("ha ocurrido un error, intenta mas tarde");
         window.location.reload();
         break;
-    }
+    }      
 
-    window.location.reload();
-      
-
-    /* cerrar combate PokéMon  y recargar la página para seguir jugando:
+    // cerrar combate PokéMon  y recargar la página para seguir jugando:
     function cerrarCombate(){
       battleFieldContainer.style.display = "none";
       window.location.reload();
-    }*/
+    }
 }
