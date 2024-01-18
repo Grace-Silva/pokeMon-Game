@@ -30,14 +30,17 @@ function seleccionarPokemon() {
 
   // pikachu
   if (inputPikachu.checked) {
+    alert("haz elegido a pikachu");
     pokUser = 1;
   } 
     // psyduck
     else if (inputPsyduck.checked) {
+      alert("haz elegido a psyduck");
       pokUser = 2;
     } 
     // geodude
     else if (inputGeodude.checked) {
+      alert("haz elegido a geodude");
       pokUser = 3;
       }
   // el usuario no elige nada, el PC tampoco    
@@ -62,14 +65,17 @@ function seleccionarPokemonPC(){
 
   switch (pokemonPC) {
     case 1:
+      alert("pc ha elegido a bulbasur");
       pokPC = 1;
       break;
 
     case 2:
+      alert("pc ha elegido a charmander");
       pokPC = 2;
       break;
 
     case 3:
+      alert("pc ha elegido a squirtle");
       pokPC = 3;
       break;
 
@@ -90,7 +96,7 @@ function aleatorio(min, max){
 
 function mostrarCombate(){
 
-  // window background
+  /* window background
   let battleFieldContainer = document.querySelector(".battleFieldContainer");
     battleFieldContainer.style.display = "flex";
 
@@ -100,29 +106,61 @@ function mostrarCombate(){
     
     let userPokeMon = document.getElementById("userPokeMon");
     let pcPokeMon = document.getElementById("pcPokeMon");
-
+*/
     let pok1 = seleccionarPokemon();
     let pok2 = seleccionarPokemonPC();
       // función seleccionar pokemon (user)
 
-    if(pok1==1 && pok2==3 || pok2==2){
-      alert("pikachu le gana a squirtle y a charmander");  
-    }
-      else if(pok1==2 && pokPC==1 || pok2==3){
-        alert("psyduck le gana a bulbasur y squirtle");
-      }
-      else if(pok1==3 && pok2==1 || pok2==2){
-        alert("geodude le gana a bulbasur y charmander");
-      }
-    else{
-      alert("gana pc");
-    }  
+    switch (pok1) {
+      //pikachu
+      case 1:
+        if(pok2==3){
+          alert("pikachu le gana a squirtle");
+        }
+          else if(pok2==2){
+            alert("pikachu empata con charmander");
+          }
+        else{
+          alert("bulbasur PC gana");
+        }  
+        break;
+      // psyduck
+      case 2:
+        if(pok2==1){
+          alert("psyduck le gana bulbasur");
+        }
+          else if(pok2==3){
+            alert("psyduck empata con squirtle");
+          }
+         else{
+          alert("charmander PC gana");
+         } 
+         break;
+      // geodude
+      case 3:
+        if(pok2==2){
+          alert("geodude le gana a charmander");
+        }
+          else if(pok2==1){
+            alert("geodude empata con bulbasur");
+          }
+         else{
+          alert("squirtle PC gana");
+         } 
+        break;   
 
+      default:
+        alert("ha ocurrido un error, intenta mas tarde");
+        window.location.reload();
+        break;
+    }
+
+    window.location.reload();
       
 
-    // cerrar combate PokéMon  y recargar la página para seguir jugando:
+    /* cerrar combate PokéMon  y recargar la página para seguir jugando:
     function cerrarCombate(){
       battleFieldContainer.style.display = "none";
       window.location.reload();
-    }
+    }*/
 }
