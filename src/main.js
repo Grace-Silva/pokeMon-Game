@@ -43,6 +43,7 @@ function seleccionarPokemon() {
   // el usuario no elige nada, el PC tampoco    
   else{
     alert("Por favor selecciona un PokéMon.");
+    window.location.reload();
   }
 
   return pokUser;
@@ -74,6 +75,7 @@ function seleccionarPokemonPC(){
 
     default:
       alert("LA PC NO QUIERE JUGAR, VUELVE MÁS TARDE.");
+      window.location.reload();
       break;
   }
 
@@ -88,16 +90,6 @@ function aleatorio(min, max){
 
 
 function mostrarCombate(){
-
-  // window background
-  let battleFieldContainer = document.querySelector(".battleFieldContainer");
-    battleFieldContainer.style.display = "flex";
-  // battle result
-  let battleResult = document.querySelector(".battleResult");  
-
-  // close button
-  let closeFieldButton = document.getElementById("closeFieldButton");
-    closeFieldButton.addEventListener("click", cerrarCombate);
     
     // contenedores de imagenes de los pokemon
     let userPokeMon = document.getElementById("userPokeMon");
@@ -122,10 +114,13 @@ function mostrarCombate(){
           break;  
 
         default:
-          alert("Ha ocurrido un error, intenta mas tarde.");
+          alert("El usuario no ha elegido un PokéMon");
           window.location.reload();
           break;
       }  
+
+      // battle result
+      let battleResult = document.querySelector(".battleResult");  
 
       // asignación de imagen para el pokemon del usuario
       switch (pok1) {
@@ -170,11 +165,19 @@ function mostrarCombate(){
           break;   
 
         default:
-          alert("Ha ocurrido un error, intenta mas tarde.");
+          alert("No haz elegido un PokéMon");
           window.location.reload();
           break;
       }      
 
+      // mostrar pokemons en un ventana
+      let battleFieldContainer = document.querySelector(".battleFieldContainer");
+        battleFieldContainer.style.display = "flex";
+
+    // close button
+    let closeFieldButton = document.getElementById("closeFieldButton");
+      closeFieldButton.addEventListener("click", cerrarCombate);
+      
     // cerrar combate PokéMon  y recargar la página para seguir jugando:
     function cerrarCombate(){
       battleFieldContainer.style.display = "none";
