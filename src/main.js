@@ -102,15 +102,15 @@ function mostrarCombate(){
       switch (pok2) {
         // bulbasur
         case 1:
-          pcPokeMon.setAttribute("src", "../assets/bulbasur.png");    
+          pcPokeMon.setAttribute("src", "./assets/bulbasur.png");    
           break;
         // charmander
         case 2:
-          pcPokeMon.setAttribute("src", "../assets/charmander.png");
+          pcPokeMon.setAttribute("src", "./assets/charmander.png");
           break;
         // squirtle
         case 3:
-          pcPokeMon.setAttribute("src", "../assets/squirtle.png");
+          pcPokeMon.setAttribute("src", "./assets/squirtle.png");
           break;  
 
         default:
@@ -126,7 +126,7 @@ function mostrarCombate(){
       switch (pok1) {
         //pikachu
         case 1:
-          userPokeMon.setAttribute("src", "../assets/pikachu.png");
+          userPokeMon.setAttribute("src", "./assets/pikachu.png");
           if(pok2==3){
             battleResult.textContent = "TÚ GANAS";
           }
@@ -139,7 +139,7 @@ function mostrarCombate(){
           break;
         // psyduck
         case 2:
-          userPokeMon.setAttribute("src", "../assets/psyduck.png");
+          userPokeMon.setAttribute("src", "./assets/psyduck.png");
           if(pok2==1){
             battleResult.textContent = "TÚ GANAS";
           }
@@ -152,7 +152,7 @@ function mostrarCombate(){
           break;
         // geodude
         case 3:
-          userPokeMon.setAttribute("src", "../assets/geodude.png");
+          userPokeMon.setAttribute("src", "./assets/geodude.png");
           if(pok2==2){
             battleResult.textContent = "TÚ GANAS";
           }
