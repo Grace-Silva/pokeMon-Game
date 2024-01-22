@@ -24,20 +24,18 @@ function deseleccionarTodo(){
 function seleccionarPokemon() {
 
   /* casillas de selección */
-  let inputPikachu = document.getElementById("pikachu");
-  let inputPsyduck = document.getElementById("psyduck");
-  let inputGeodude = document.getElementById("geodude");
+  let inputs = document.querySelectorAll("input");
 
   // pikachu
-  if (inputPikachu.checked) {
+  if (inputs[0].checked) {
     pokUser = 1;
   } 
     // psyduck
-    else if (inputPsyduck.checked) {
+    else if (inputs[1].checked) {
       pokUser = 2;
     } 
     // geodude
-    else if (inputGeodude.checked) {
+    else if (inputs[2].checked) {
       pokUser = 3;
       }
   // el usuario no elige nada, el PC tampoco    
@@ -92,8 +90,8 @@ function aleatorio(min, max){
 function mostrarCombate(){
     
     // contenedores de imagenes de los pokemon
-    let userPokeMon = document.getElementById("userPokeMon");
-    let pcPokeMon = document.getElementById("pcPokeMon");
+    let userPokeMon = document.getElementById("userPokeMon"); // user pokemon image
+    let pcPokeMon = document.getElementById("pcPokeMon"); // cpu pokemon image
 
     let pok1 = seleccionarPokemon();
     let pok2 = seleccionarPokemonPC();
