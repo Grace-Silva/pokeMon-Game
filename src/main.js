@@ -13,9 +13,8 @@ function ampliarPokemon() {
 }
 */
 
-// deselecciona todos pokemon para evitar una elección errónea:
+// deselecciona todos pokemon para evitar una elección errónea y condicionar que uno de los pokémon disponibles sea elegido:
 window.addEventListener("load", deseleccionarTodo);
-
 function deseleccionarTodo(){
   document.querySelectorAll("[type='radio']").forEach((x) => x.checked=false);
 }
@@ -182,3 +181,29 @@ function mostrarCombate(){
       window.location.reload();
     }
 }
+
+/* clases para los pokemon */
+class POKEMON{
+
+    constructor(nombre, foto, tipo){
+      
+      this.nombre = nombre;
+      this.foto = foto;
+      this.tipo = tipo;
+
+    }
+
+}
+
+// se crea el objeto pikachu:
+let PIKACHU = new POKEMON("Pikachu", "./assets/pikachu.png", "Eléctrico");
+// se crea el objeto psyduck:
+let PSYDUCK = new POKEMON("PSYDUCK", "./assets/psyduck.png", "Hielo");
+// se crea el objeto geodude:
+let GEODUDE = new POKEMON("GEODUDE", "./assets/geodude.png", "Roca");
+// se crea el objeto bulbasur:
+let BULBASUR = new POKEMON("BULBASUR", "./assets/bulbasur.png", "Planta");
+// se crea el objeto charmander:
+let  CHARMANDER = new POKEMON("CHARMANDER", "./assets/charmander.png", "Fuego");
+// se crea el objeto squirtle:
+let SQUIRTLE = new POKEMON("SQUIRTLE", "./assets/squirtle.png", "Agua");
