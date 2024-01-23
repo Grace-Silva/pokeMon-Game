@@ -182,7 +182,9 @@ function mostrarCombate(){
     }
 }
 
-/* clases para los pokemon */
+/* array para los pokemons */
+let arrayPOKEMON = [] // se declara el arreglo
+/* clase para los pokemons */
 class POKEMON{
 
     constructor(nombre, foto, tipo){
@@ -207,3 +209,6 @@ let BULBASUR = new POKEMON("BULBASUR", "./assets/bulbasur.png", "Planta");
 let  CHARMANDER = new POKEMON("CHARMANDER", "./assets/charmander.png", "Fuego");
 // se crea el objeto squirtle:
 let SQUIRTLE = new POKEMON("SQUIRTLE", "./assets/squirtle.png", "Agua");
+
+// llenamos o empujamos información al arreglo:
+arrayPOKEMON.push(PIKACHU, PSYDUCK, GEODUDE, BULBASUR, CHARMANDER, SQUIRTLE);
