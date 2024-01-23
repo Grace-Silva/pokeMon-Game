@@ -192,6 +192,7 @@ class POKEMON{
       this.nombre = nombre;
       this.foto = foto;
       this.tipo = tipo;
+      this.ataques = [] // no se nombra en la parte superior
 
     }
 
@@ -212,3 +213,30 @@ let SQUIRTLE = new POKEMON("SQUIRTLE", "./assets/squirtle.png", "Agua");
 
 // llenamos o empujamos información al arreglo:
 arrayPOKEMON.push(PIKACHU, PSYDUCK, GEODUDE, BULBASUR, CHARMANDER, SQUIRTLE);
+
+/* nombreElemento.nombrePropiedad  : muestra una propiedad en específico
+
+arrayPOKEMON[2].foto
+imprime = "./assets/geodude.png" */
+
+// llenamos el array para los ataques de cada uno de los pokemon
+PIKACHU.ataques.push(
+
+  { nombreAtaque: "Impactrueno", tipoAtaque: "Eléctrico", poder: 40},
+  { nombreAtaque: "Ataque-Rápido", tipoAtaque: "Normal", poder: 40},
+  { nombreAtaque: "Rayo", tipoAtaque: "Eléctrico", poder: 95},
+  { nombreAtaque: "Doble-Equipo", tipoAtaque:"Psíquico", poder: 0}
+
+)
+
+PSYDUCK.ataques.push(
+
+  { nombreAtaque: "Arañazo", tipoAtaque: "Normal", poder: 40},
+  { nombreAtaque: "Confusión", tipoAtaque: "Psíquico", poder: 50},
+  { nombreAtaque: "Agua Cola", tipoAtaque: "Agua", poder: 90},
+  { nombreAtaque: "Hidropulso", tipoAtaque:"Agua", poder: 60}
+
+)
+
+/* PIKACHU.ataques[1].tipoAtaque
+salida: "Normal" */
