@@ -95,19 +95,33 @@ function mostrarCombate(){
     let pok1 = seleccionarPokemon();
     let pok2 = seleccionarPokemonPC();
 
+    let nombreUserPokeMon = document.getElementById("nombreUserPokeMon");
+    let nombrePCPokeMon = document.getElementById("nombrePCPokeMon");
+
+    arrayPOKEMON.forEach((POKEMON) => {
+      console.log(POKEMON);
+    })
+
+
       // asignación de imagen para el pokemon de la cpu
       switch (pok2) {
         // bulbasur
         case 1:
-          pcPokeMon.setAttribute("src", "./assets/bulbasur.png");    
+          pcPokeMon.setAttribute("src", arrayPOKEMON[3].foto);  
+          nombrePCPokeMon.textContent = arrayPOKEMON[3].nombre; 
+          nombrePCPokeMon = (arrayPOKEMON[3].nombre); 
           break;
         // charmander
         case 2:
-          pcPokeMon.setAttribute("src", "./assets/charmander.png");
+          pcPokeMon.setAttribute("src", arrayPOKEMON[4].foto);
+          nombrePCPokeMon.textContent = arrayPOKEMON[4].nombre; 
+          nombrePCPokeMon = (arrayPOKEMON[4].nombre);
           break;
         // squirtle
         case 3:
-          pcPokeMon.setAttribute("src", "./assets/squirtle.png");
+          pcPokeMon.setAttribute("src", arrayPOKEMON[5].foto);
+          nombrePCPokeMon.textContent = arrayPOKEMON[5].nombre; 
+          nombrePCPokeMon = (arrayPOKEMON[5].nombre);
           break;  
 
         default:
@@ -123,41 +137,49 @@ function mostrarCombate(){
       switch (pok1) {
         //pikachu
         case 1:
-          userPokeMon.setAttribute("src", "./assets/pikachu.png");
+          userPokeMon.setAttribute("src", arrayPOKEMON[0].foto);
+          nombreUserPokeMon.textContent = arrayPOKEMON[0].nombre;
+          nombreUserPokeMon = arrayPOKEMON[0].nombre;
           if(pok2==3){
-            battleResult.textContent = "TÚ GANAS";
+            battleResult.textContent = ((nombreUserPokeMon) +" Gana a " +nombrePCPokeMon);
           }
             else if(pok2==2){
-              battleResult.textContent = "EMPATE";
+              battleResult.textContent = ((nombreUserPokeMon) +" Empata con " +nombrePCPokeMon);;
             }
           else{
-            battleResult.textContent = "CPU GANA";
+            battleResult.textContent = ((nombreUserPokeMon) +" Pierde ante " +nombrePCPokeMon);
           }  
           break;
+
         // psyduck
         case 2:
-          userPokeMon.setAttribute("src", "./assets/psyduck.png");
+          userPokeMon.setAttribute("src", arrayPOKEMON[1].foto);
+          nombreUserPokeMon.textContent = arrayPOKEMON[1].nombre;
+          nombreUserPokeMon = arrayPOKEMON[1].nombre;
           if(pok2==1){
-            battleResult.textContent = "TÚ GANAS";
+            battleResult.textContent = (nombreUserPokeMon +" Gana a " +nombrePCPokeMon);
           }
             else if(pok2==3){
-              battleResult.textContent = "EMPATE";
+              battleResult.textContent = (nombreUserPokeMon +" Empata con " +nombrePCPokeMon);
             }
           else{
-            battleResult.textContent = "CPU GANA";
+            battleResult.textContent = (nombreUserPokeMon +" Pierde ante " +nombrePCPokeMon);
           } 
           break;
+
         // geodude
         case 3:
-          userPokeMon.setAttribute("src", "./assets/geodude.png");
+          userPokeMon.setAttribute("src", arrayPOKEMON[2].foto);
+          nombreUserPokeMon.textContent = arrayPOKEMON[2].nombre;
+          nombreUserPokeMon.arrayPOKEMON[2].nombre;
           if(pok2==2){
-            battleResult.textContent = "TÚ GANAS";
+            battleResult.textContent = (nombreUserPokeMon +" Gana a " +nombrePCPokeMon);
           }
             else if(pok2==1){
-              battleResult.textContent = "EMPATE";
+              battleResult.textContent = (nombreUserPokeMon +" Empata con " +nombrePCPokeMon);
             }
           else{
-            battleResult.textContent = "CPU GANA";
+            battleResult.textContent = (nombreUserPokeMon +" Pierde ante " +nombrePCPokeMon);
           } 
           break;   
 
