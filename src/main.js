@@ -238,5 +238,41 @@ PSYDUCK.ataques.push(
 
 )
 
+GEODUDE.ataques.push(
+
+  { nombreAtaque: "Rizo-Defensa", tipoAtaque: "Normal", poder: 50},
+  { nombreAtaque: "Lanzarocas", tipoAtaque: "Roca", poder: 50},
+  { nombreAtaque: "Terratemblor", tipoAtaque: "Tierra", poder: 60},
+  { nombreAtaque: "Placaje", tipoAtaque:"Normal", poder: 50}
+
+)
+
+BULBASUR.ataques.push(
+
+  { nombreAtaque: "Corte", tipoAtaque: "Normal", poder: 50},
+  { nombreAtaque: "Látigo Cepa", tipoAtaque: "Planta", poder: 40},
+  { nombreAtaque: "Gigadrenado", tipoAtaque: "Planta", poder: 75},
+  { nombreAtaque: "Meteorobola", tipoAtaque:"Normal", poder: 50}
+
+)
+
+CHARMANDER.ataques.push(
+
+  { nombreAtaque: "Corte", tipoAtaque: "Normal", poder: 50},
+  { nombreAtaque: "Golpe Aéreo", tipoAtaque: "Volador", poder: 60},
+  { nombreAtaque: "Puño-Fuego", tipoAtaque: "Fuego", poder: 75},
+  { nombreAtaque: "Colmillo-Ígneo", tipoAtaque:"Fuego", poder: 65}
+
+)
+
+SQUIRTLE.ataques.push(
+
+  { nombreAtaque: "Golpe Cabeza", tipoAtaque: "Normal", poder: 70},
+  { nombreAtaque: "Cascada", tipoAtaque: "Agua", poder: 80},
+  { nombreAtaque: "Mordisco", tipoAtaque: "Siniestro", poder: 60},
+  { nombreAtaque: "AcuaJet", tipoAtaque:"Agua", poder: 90}
+
+)
+
 /* PIKACHU.ataques[1].tipoAtaque
 salida: "Normal" */
